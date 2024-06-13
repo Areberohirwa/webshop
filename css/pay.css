@@ -8,6 +8,7 @@
 }
 
 body {
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
@@ -92,116 +93,112 @@ main {
     grid-area: mn;
 }
 
-.down-holder {
-    display: grid;
-    background-color: beige;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 700px;
-    grid-template-areas:
-        "fb sb tbr"
-        "fb sb tbr";
-    justify-items: center;
-}
-
-img[alt="shoe logo"] {
+img[alt="Lo"] {
     height: 450px;
     width: 450px;
-    object-fit: contain;
-    background-color: beige;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
-.first-brand {
-    grid-area: fb;
+.pay-holder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
 }
 
-.first-brand h4 {
-    padding-top: 20px;
+.img {
+    grid-area: 1/1/2/2;
+}
+
+.information-box {
+    grid-area: 1/2/2/3;
+    display: grid;
+}
+
+.object-description {
     text-align: center;
-}
-
-.first-brand h4 a {
-    text-decoration: none;
-    position: relative;
-    top: 100px;
-    left: 0px;
     color: white;
     background-color: black;
-    padding: 12px 25px;
+    width: 240px;
     border-radius: 5px;
-    transition: 1s;
+    height: 200px;
 }
 
-.first-brand h4 a:hover {
-    color: black;
-    background-color: white;
-    text-decoration: underline;
-}
-
-.second-brand {
-    grid-area: sb;
-}
-
-.second-brand h4 {
-    padding-top: 20px;
+.pay-holder .information-box h3 {
     text-align: center;
-}
-
-.second-brand a {
-    text-decoration: none;
-    position: relative;
-    top: 100px;
-    left: 0px;
     color: white;
     background-color: black;
-    padding: 12px 25px;
+    width: 240px;
     border-radius: 5px;
-    transition: 1s;
+    height: 30px;
 }
 
-.second-brand h4 a:hover {
-    color: black;
-    background-color: white;
-    text-decoration: underline;
-}
-
-.third-brand {
-    grid-area: tbr;
-}
-
-.third-brand h4 {
-    padding-top: 20px;
+.pay-holder .user-inputs .object-price {
     text-align: center;
-}
-
-.third-brand a {
-    text-decoration: none;
-    text-align: center;
-    position: relative;
-    top: 100px;
-    left: 0px;
     color: white;
     background-color: black;
-    padding: 12px 25px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.pay-holder .information-box .object-name {
+    font-size: 20px;
+}
+
+
+.size-container {
+    padding-left: 5px;
+}
+
+.size-container label {
+    background-color: black;
+    color: white;
+    margin: 1px;
     border-radius: 5px;
-    transition: 1s;
+    padding: 1px 3px;
+    font-weight: bold;
+    height: 9px;
 }
 
-.third-brand h4 a:hover {
-    color: black;
-    background-color: white;
-    text-decoration: underline;
+.user-inputs {
+    grid-area: 1/3/2/4;
+    display: grid;
+    grid-gap: 5px;
 }
 
-header .add-link {
+.user-inputs .title {
+    font-size: 25px;
+}
+
+.user-inputs input {
+    width: 99%;
+}
+
+
+header .add-link,
+header .back-added-link {
     justify-self: center;
     align-self: center;
 }
 
-header .add-link i {
+header i {
     list-style-type: none;
     color: white;
     font-size: 40px;
     background-color: transparent;
+    margin-inline: 15px;
+}
+
+.user-inputs button {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.border1 {
+    border:2px solid red;
 }
 
 @media screen and (max-width: 898px) {
@@ -229,7 +226,8 @@ header .add-link i {
 
 
     header .lone-link,
-    header nav {
+    header nav,
+    .back-added-link {
         display: none;
     }
 
@@ -237,63 +235,38 @@ header .add-link i {
         grid-area: mn;
     }
 
-    .down-holder {
+    .pay-holder {
         margin: 0px auto;
         width: auto;
-        display: grid;
-        background-color: beige;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "fb"
-            "sb"
-            "tbr";
-        justify-items: center;
-        align-items: self-start;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
-    .first-brand {
-        grid-area: fb;
+    .information-box h3 {
+        margin-top: 1px;
+        margin-bottom: 2px;
     }
 
-    .second-brand {
-        grid-area: sb;
+    .size-container {
+        margin-top: 1px;
+        margin-bottom: 2px;
     }
 
-    .third-brand {
-        grid-area: tbr;
+    .user-inputs input {
+        padding: 12px 25px;
+        outline: none;
+        border: 2px solid grey;
+        border-radius: 10px;
     }
 
-    img[alt="shoe logo"] {
-        object-fit: contain;
-        background-color: beige;
-    }
-
-    .first-brand h4 a,
-    .second-brand h4 a,
-    .third-brand h4 a {
-        text-decoration: none;
-        position: relative;
-        top: 0;
-        left: 0;
-        color: white;
-        background-color: black;
-        padding: 5px 10px;
-        border-radius: 5px;
-        transition: 1s;
-    }
-
-    .first-brand h4,
-    .second-brand h4,
-    .third-brand h4 {
-        padding-bottom: 20px;
-    }
-
-    .third-brand h4 a {
-        margin-bottom: 20px;
+    .user-inputs input:focus {
+        border-color: black;
     }
 }
 
-@media screen and (min-width:898px) and (max-width: 1023px) {
+@media screen and (min-width: 898px) and (max-width:1350px) {
     body {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -313,7 +286,8 @@ header .add-link i {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    header nav {
+    header nav,
+    .lone-link {
         display: none;
     }
 
@@ -340,7 +314,7 @@ header .add-link i {
         transition: 1s;
     }
 
-    header .lone-link {
+    header .back-added-link {
         grid-area: 1/1/2/2;
         justify-self: left;
         align-self: center;
@@ -361,61 +335,37 @@ header .add-link i {
         background-color: beige;
     }
 
-    .down-holder {
-        width: auto;
-        background-color: beige;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-areas:
-            "fb fb fb sb sb sb"
-            " .  . tbr tbr .  .";
-        justify-items: center;
-        align-items: self-start;
+    .pay-holder {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
-    .first-brand {
-        grid-area: fb;
+    .information-box h3 {
+        margin-top: 1px;
+        margin-bottom: 2px;
     }
 
-    .second-brand {
-        grid-area: sb;
+    .size-container {
+        margin-top: 1px;
+        margin-bottom: 2px;
     }
 
-    .third-brand {
-        grid-area: tbr;
-    }
-
-    img[alt="shoe logo"] {
-        object-fit: contain;
-        background-color: beige;
-    }
-
-    .first-brand h4 a,
-    .second-brand h4 a,
-    .third-brand h4 a {
-        text-decoration: none;
-        position: relative;
-        top: 0;
-        left: 0;
-        color: white;
-        background-color: black;
+    .user-inputs input {
         padding: 12px 25px;
-        border-radius: 5px;
-        transition: 1s;
+        outline: none;
+        border: 2px solid grey;
+        border-radius: 10px;
     }
 
-    .first-brand h4,
-    .second-brand h4,
-    .third-brand h4 {
-        padding-bottom: 20px;
+    .user-inputs input:focus {
+        border-color: goldenrod;
     }
 
-    .third-brand h4 a {
-        margin-bottom: 80px;
-    }
 }
 
-@media screen and (min-width:1023px) and (max-width: 1440px) {
+@media screen and (min-width: 1350px) and (max-width: 1440px) {
     body {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -426,7 +376,7 @@ header .add-link i {
             "mn"
             "mn"
             "mn";
-        background-color: beige;
+        background-color: #B0BC70;
     }
 
     header {
@@ -436,7 +386,8 @@ header .add-link i {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    header .add-link {
+    header .add-link,
+    header .back-added-link {
         display: none;
     }
 
@@ -467,6 +418,7 @@ header .add-link i {
         grid-area: 1/1/2/2;
         justify-self: left;
         align-self: center;
+        display: flex;
     }
 
     header .lone-link li a {
@@ -477,27 +429,58 @@ header .add-link i {
     header nav ul li {
         list-style-type: none;
         display: inline-block;
+        margin-inline: 0px;
     }
 
     main {
         grid-area: mn;
-        background-color: beige;
-        padding-top: 100px;
+        background-color: #B0BC70;
     }
+
+    .pay-holder {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .information-box h3 {
+        margin-top: 1px;
+        margin-bottom: 2px;
+    }
+
+    .size-container {
+        margin-top: 1px;
+        margin-bottom: 2px;
+    }
+
+    .user-inputs input {
+        height: 50px;
+        width: 300px;
+        outline: none;
+        padding-left: 12px;
+        border: 2px solid grey;
+        border-radius: 10px;
+    }
+
+    .user-inputs input:focus {
+        border-color: dodgerblue;
+    }
+
 }
 
 @media screen and (min-width: 1440px) {
     body {
-        height: 100vh;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1.5rem;
         grid-template-areas:
             "hd"
             "hd"
             "mn"
             "mn"
             "mn";
-        background-color: beige;
+        background-color: #B0BC70;
     }
 
     header {
@@ -507,7 +490,7 @@ header .add-link i {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    header .add-link {
+    header .add-link, header .back-added-link {
         display: none;
     }
 
@@ -538,6 +521,7 @@ header .add-link i {
         grid-area: 1/1/2/2;
         justify-self: left;
         align-self: center;
+        display: flex;
     }
 
     header .lone-link li a {
@@ -548,30 +532,42 @@ header .add-link i {
     header nav ul li {
         list-style-type: none;
         display: inline-block;
+        margin-inline: 0px;
     }
 
     main {
         grid-area: mn;
-        background-color: beige;
-        padding-top: 0px;
-    }
-    .first-brand h4 a,
-    .second-brand h4 a,
-    .third-brand h4 a {
-        text-decoration: none;
-        position: relative;
-        top: 100px;
-        left: 0;
-        color: white;
-        background-color: black;
-        padding: 12px 25px;
-        border-radius: 5px;
-        transition: 1s;
+        background-color: #B0BC70;
     }
 
-    .first-brand h4,
-    .second-brand h4,
-    .third-brand h4 {
-        padding-bottom: 25px;
+    .pay-holder {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
     }
+
+    .pay-holder .information-box h3, .pay-holder .information-box h4{
+        margin-top: 1px;
+        margin-bottom: 2px;
+        width: 400px;
+    }
+
+    .size-container {
+        margin-top: 1px;
+        margin-bottom: 2px;
+    }
+
+    .user-inputs input {
+        padding: 12px;
+        outline: none;
+        border: 2px solid grey;
+        border-radius: 10px;
+        width: 400px;
+    }
+
+    .user-inputs input:focus {
+        border-color: goldenrod;
+    }
+
 }

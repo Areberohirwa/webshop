@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* border: 1px solid; */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -35,6 +34,7 @@ header .lone-link {
 
 header .lone-link li {
     list-style-type: none;
+    display: inline-block;
 }
 
 header .lone-link li a {
@@ -92,116 +92,81 @@ main {
     grid-area: mn;
 }
 
-.down-holder {
-    display: grid;
-    background-color: beige;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 700px;
-    grid-template-areas:
-        "fb sb tbr"
-        "fb sb tbr";
-    justify-items: center;
+.puma-displayer {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-img[alt="shoe logo"] {
+img[alt="pumashoe"] {
+    margin-top: 5px;
     height: 450px;
     width: 450px;
-    object-fit: contain;
-    background-color: beige;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
-.first-brand {
-    grid-area: fb;
+
+.card h3:nth-child(2) {
+    width: 240px;
+    margin: 10px auto;
 }
 
-.first-brand h4 {
-    padding-top: 20px;
+.card h3:nth-child(3) {
+    width: 250px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+
+.card h3:nth-child(4) {
+    width: 260px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
+h3 {
     text-align: center;
-}
-
-.first-brand h4 a {
-    text-decoration: none;
-    position: relative;
-    top: 100px;
-    left: 0px;
+    padding-left: 10px;
+    margin-top: 10px;
+    height: 30px;
     color: white;
     background-color: black;
-    padding: 12px 25px;
-    border-radius: 5px;
-    transition: 1s;
+    border-radius: 10px;
 }
 
-.first-brand h4 a:hover {
-    color: black;
-    background-color: white;
-    text-decoration: underline;
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.second-brand {
-    grid-area: sb;
-}
-
-.second-brand h4 {
-    padding-top: 20px;
-    text-align: center;
-}
-
-.second-brand a {
+.card a {
+    align-self: center;
     text-decoration: none;
-    position: relative;
-    top: 100px;
-    left: 0px;
     color: white;
+    font-size: 20px;
+    padding: 05px 120px;
     background-color: black;
-    padding: 12px 25px;
-    border-radius: 5px;
-    transition: 1s;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
-.second-brand h4 a:hover {
-    color: black;
-    background-color: white;
-    text-decoration: underline;
-}
-
-.third-brand {
-    grid-area: tbr;
-}
-
-.third-brand h4 {
-    padding-top: 20px;
-    text-align: center;
-}
-
-.third-brand a {
-    text-decoration: none;
-    text-align: center;
-    position: relative;
-    top: 100px;
-    left: 0px;
-    color: white;
-    background-color: black;
-    padding: 12px 25px;
-    border-radius: 5px;
-    transition: 1s;
-}
-
-.third-brand h4 a:hover {
-    color: black;
-    background-color: white;
-    text-decoration: underline;
-}
-
-header .add-link {
+header .add-link,
+header .back-added-link {
     justify-self: center;
     align-self: center;
 }
 
-header .add-link i {
+header i {
     list-style-type: none;
     color: white;
     font-size: 40px;
     background-color: transparent;
+    margin-inline: 15px;
 }
 
 @media screen and (max-width: 898px) {
@@ -218,11 +183,11 @@ header .add-link i {
         background-color: #525b76;
         grid-area: hd;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     header img {
-        grid-area: 1/1/2/2;
+        grid-area: 1/2/3/2;
         justify-self: center;
         align-items: center;
     }
@@ -235,65 +200,22 @@ header .add-link i {
 
     main {
         grid-area: mn;
-    }
-
-    .down-holder {
-        margin: 0px auto;
-        width: auto;
-        display: grid;
-        background-color: beige;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "fb"
-            "sb"
-            "tbr";
-        justify-items: center;
-        align-items: self-start;
-    }
-
-    .first-brand {
-        grid-area: fb;
-    }
-
-    .second-brand {
-        grid-area: sb;
-    }
-
-    .third-brand {
-        grid-area: tbr;
-    }
-
-    img[alt="shoe logo"] {
-        object-fit: contain;
         background-color: beige;
     }
 
-    .first-brand h4 a,
-    .second-brand h4 a,
-    .third-brand h4 a {
-        text-decoration: none;
-        position: relative;
-        top: 0;
-        left: 0;
-        color: white;
-        background-color: black;
-        padding: 5px 10px;
+    .card a {
+        font-size: 15px;
+    }
+
+    img[alt="pumashoe"] {
+        object-fit: cover;
         border-radius: 5px;
-        transition: 1s;
     }
 
-    .first-brand h4,
-    .second-brand h4,
-    .third-brand h4 {
-        padding-bottom: 20px;
-    }
 
-    .third-brand h4 a {
-        margin-bottom: 20px;
-    }
 }
 
-@media screen and (min-width:898px) and (max-width: 1023px) {
+@media screen and (min-width: 898px) and (max-width:1350px) {
     body {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -313,7 +235,8 @@ header .add-link i {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    header nav {
+    header nav,
+    .lone-link {
         display: none;
     }
 
@@ -340,7 +263,7 @@ header .add-link i {
         transition: 1s;
     }
 
-    header .lone-link {
+    header .back-added-link {
         grid-area: 1/1/2/2;
         justify-self: left;
         align-self: center;
@@ -361,61 +284,9 @@ header .add-link i {
         background-color: beige;
     }
 
-    .down-holder {
-        width: auto;
-        background-color: beige;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-areas:
-            "fb fb fb sb sb sb"
-            " .  . tbr tbr .  .";
-        justify-items: center;
-        align-items: self-start;
-    }
-
-    .first-brand {
-        grid-area: fb;
-    }
-
-    .second-brand {
-        grid-area: sb;
-    }
-
-    .third-brand {
-        grid-area: tbr;
-    }
-
-    img[alt="shoe logo"] {
-        object-fit: contain;
-        background-color: beige;
-    }
-
-    .first-brand h4 a,
-    .second-brand h4 a,
-    .third-brand h4 a {
-        text-decoration: none;
-        position: relative;
-        top: 0;
-        left: 0;
-        color: white;
-        background-color: black;
-        padding: 12px 25px;
-        border-radius: 5px;
-        transition: 1s;
-    }
-
-    .first-brand h4,
-    .second-brand h4,
-    .third-brand h4 {
-        padding-bottom: 20px;
-    }
-
-    .third-brand h4 a {
-        margin-bottom: 80px;
-    }
 }
 
-@media screen and (min-width:1023px) and (max-width: 1440px) {
+@media screen and (min-width: 1350px) and (max-width: 1440px) {
     body {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -426,7 +297,7 @@ header .add-link i {
             "mn"
             "mn"
             "mn";
-        background-color: beige;
+        background-color: #B0BC70;
     }
 
     header {
@@ -436,7 +307,8 @@ header .add-link i {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    header .add-link {
+    header .add-link,
+    header .back-added-link {
         display: none;
     }
 
@@ -477,13 +349,14 @@ header .add-link i {
     header nav ul li {
         list-style-type: none;
         display: inline-block;
+        margin-inline: 0px;
     }
 
     main {
         grid-area: mn;
-        background-color: beige;
-        padding-top: 100px;
+        background-color: #B0BC70;
     }
+
 }
 
 @media screen and (min-width: 1440px) {
@@ -491,13 +364,14 @@ header .add-link i {
         height: 100vh;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1.5rem;
         grid-template-areas:
             "hd"
             "hd"
             "mn"
             "mn"
             "mn";
-        background-color: beige;
+        background-color: #B0BC70;
     }
 
     header {
@@ -507,7 +381,8 @@ header .add-link i {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    header .add-link {
+    header .add-link,
+    header .back-added-link {
         display: none;
     }
 
@@ -548,30 +423,12 @@ header .add-link i {
     header nav ul li {
         list-style-type: none;
         display: inline-block;
+        margin-inline: 30px;
     }
 
     main {
         grid-area: mn;
-        background-color: beige;
-        padding-top: 0px;
-    }
-    .first-brand h4 a,
-    .second-brand h4 a,
-    .third-brand h4 a {
-        text-decoration: none;
-        position: relative;
-        top: 100px;
-        left: 0;
-        color: white;
-        background-color: black;
-        padding: 12px 25px;
-        border-radius: 5px;
-        transition: 1s;
+        background-color: #B0BC70;
     }
 
-    .first-brand h4,
-    .second-brand h4,
-    .third-brand h4 {
-        padding-bottom: 25px;
-    }
 }
