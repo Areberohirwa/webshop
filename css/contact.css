@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #b0b7c0;
+}
+
+:root {
+    --background-color: #f9004d;
+    --hover-color: red;
+    --color: white;
+    --input: rgb(254, 149, 149);
+    --second-color: black;
+}
+
+header {
+    height: 16vh;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #525B76;
+}
+
+.homeButton {
+    text-decoration: none;
+    color: var(--color);
+    grid-area: 1/1/2/2;
+    justify-self: center;
+    align-self: center;
+    background-color: #b0b7c0;
+    padding: 12px 25px;
+    border-radius: 5px;
+}
+
+.logo {
+    grid-area: 1/2/2/3;
+    justify-self: center;
+    align-self: center;
+}
+
+header nav {
+    grid-area: 1/3/2/4;
+    justify-self: center;
+    align-self: center;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--color);
+    margin-inline: 30px;
+    background-color: #b0b7c0;
+    padding: 12px 25px;
+    border-radius: 5px;
+}
+
+.service {
+    margin: 0px auto;
+    background-color: transparent;
+    width: 90%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+#service {
+    color: var(--second-color);
+}
+
+.title {
+    color: var(--color);
+    font-size: 75px;
+    width: 90%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(42, 41, 41);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card .pra p{
+    margin-top: 10px;
+}
+
+.button-link2 {
+    background-color: black;
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button-link2:hover {
+    background-color: white;
+    color: black;
+}
+
+.button-link {
+    padding: 2px 12px;
+    text-decoration: none;
+    font-weight: bolder;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.info {
+    margin: 0px auto;
+    width: 90%;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.info div {
+    color: var(--color);
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.info div ul li {
+    font-size: 34px;
+    color: var(--second-color);
+    font-weight: bolder;
+    list-style-type: none;
+    display: inline-block;
+    align-items: center;
+    padding: 10px 25px;
+    transition: 1s;
+}
+
+.info div ul li a {
+    color: var(--second-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.4ws;
+}
+
+.info div ul li:hover {
+    color: var(--background-color);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.info div ul li a:hover {
+    color: var(--background-color);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.my-skills {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.represent1,
+.represent2,
+.represent3 {
+    flex: 1;
+    margin: 10px;
+    background-color: rgb(42, 41, 41);
+    padding: 10px;
+    border: 1px solid rgb(56, 55, 55);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(54, 54, 54);
+}
+
+.message {
+    text-align: center;
+    color: white;
+}
+
+.represent1 .message p,
+.represent3 .message p {
+    margin-top: 10px;
+}
+
+.button-link {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.button-link:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.represent1 .message p a:nth-child(2) {
+    margin-top: 10px;
+}
+
+.represent2 .message ul li {
+    list-style-type: none;
+}
+
+
+
+footer {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+footer div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer div:nth-child(1) input {
+    width: 250px;
+    height: 50px;
+    background-color: #525B76;
+    font-size: 15px;
+    margin: 5px;
+    border: 3px solid grey;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+footer div:nth-child(1) input:focus,
+footer div:nth-child(2) input:focus,
+footer div:nth-child(3) input:focus {
+    border-color: #096ef1;
+}
+
+footer div:nth-child(2) input {
+    height: 150px;
+    width: 300px;
+    padding-bottom: 40%;
+    border: 3px solid grey;
+    font-size: 15px;
+    background-color: #525B76;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+footer div:nth-child(3) {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer div:nth-child(3) input {
+    height: 50px;
+    width: 230px;
+    border: 3px solid grey;
+    font-size: 15px;
+    background-color: #525B76;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer div:nth-child(3) button {
+    padding: 12px 25px;
+    background-color: #fb5a8d;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 1310px) {
+    .contactButton{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .contactButton{
+        display: none;
+    }
+    .aboutButton{
+        display: none;
+    }
+    .title{
+        font-size: 50px;
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    body{
+        min-width: 400px;
+    }
+    header{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    header a{
+        font-size: 15px;
+    }
+}
