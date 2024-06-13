@@ -23,7 +23,7 @@ function createCard(shoe) {
     <h3>${shoe.title}</h3>
     <h3>${shoe.colour}</h3>
     <h3> € ${shoe.price}</h3>
-    <a href="pay.html" class="pay-btn-7">Buy</a>
+    <a href="#" class="pay-btn-7">Buy</a>
   </div>
     `;
 
